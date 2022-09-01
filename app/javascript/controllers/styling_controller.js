@@ -10,28 +10,15 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "field", "output" ]
-  static values = { 
-    number: Number 
-
-  }
+  static targets = [ "button" ]
+  static classes = [ "primary" ]
 
   connect() {
     // this.outputTarget.textContent = this.numberValue
-    // this.numberVaueChanged()
-    this.changed()
+    this.numberVaueChanged()
+    this.buttonTarget.classList.add(this.primaryClass)
   }
-
-  // clicked() {
-  //   this.numberValue++
-  // }
-
-  // numberValueChanged() {
-  //   this.outputTarget.textContent = this.numberValue
-  // }
-
-  changed() {
-    let text = this.fieldTarget.value
-    this.outputTarget.textContent = text
+  clicked() {
+    this.buttonTarget.classList.toggle(this.primaryClass)
   }
 }

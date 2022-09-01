@@ -1,6 +1,26 @@
 <h1>Welcome Home Page</h1>
 <p>Find me in app/views/home/index.html.erb</p>
 
+<div data-controller="hello" data-hello-number-value="4">
+  <h2 data-hello-target="output"></h2>
+  <button data-action="hello#clicked">Click ME</button>
+</div>
+
+<br>
+
 <div data-controller="hello">
-  <h2 data-target="hello.output"></h2>
+  <input type="text" data-hello-target="field" data-action="keyup->hello#changed">
+  <p data-hello-target="output"></p>
+</div>
+
+<br>
+
+<div data-controller="text-input">
+  <input type="text" data-action="change->text-input#changed" data-text-input-target="input">
+  <h2 data-hello-target="output"></h2>
+</div>
+
+<div data-controller="styling">
+  <button class="btn" data-styling-target="button" data-action="button" data-action="styling#clicked">CLICK ME</button>
+  <button data-action="styling#clicked:once">click ONCE</button>
 </div>
